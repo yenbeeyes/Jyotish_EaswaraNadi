@@ -1,2 +1,3 @@
 # Jyotish_EaswaraNadi
-This is the Translation of Easwara Nadi from Tamil to English
+This is the Translation of Easwara Nadi from Tamil to English.
+Eswara Nadi was said to be the work of a great poet in Tamil called ‘Agasthiyar.’ He has stated that it is stated by Lord Parameshwara or Lord Shiva to his consort, Goddess Parvati. He has written one Khandam for each planet, making a total of seven Khandams. In each Khandam planet’s position, starting from the placement of Lagna to the 12th house, are given, and the results thereof. This is the first book, and this contains the position of the Sun for Aries Lagna. For each position of the Sun starting from Lagna, five verses and their results are given. As the entire work is in Tamil, I have provided the Tamil verses, their translation, and the relevant chart in South as well as North Indian style..
