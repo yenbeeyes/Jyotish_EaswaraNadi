@@ -16,7 +16,7 @@ st.markdown(
 )
 
 # Load data
-csv_file = "Chandra_Khandam.csv"
+csv_file = "Chandra_Khandam/Chandra_Khandam.csv"
 try:
     df = pd.read_csv(csv_file)
 except Exception as e:
@@ -87,4 +87,5 @@ elif mode == "ALL Charts":
                     except:
                         st.info("📁 Image not available.")
                 st.markdown("**Result:**")
+
                 st.write(row["Result"])
