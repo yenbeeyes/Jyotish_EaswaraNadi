@@ -161,6 +161,7 @@ elif mode == "ALL Charts":
                 verse_id = str(row["VerseID"]).strip()
                 display_verse_block(verse_id)
 
-st.markdown("**Result:**")
+                st.markdown("**Result:**")
                 st.write(row.get("Result", "—"))
+
                 st.write(f"Looking for VerseNo: {verse_no}, Lagna: {lagna}")
