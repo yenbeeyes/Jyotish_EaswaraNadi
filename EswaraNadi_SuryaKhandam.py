@@ -41,9 +41,14 @@ def safe(val):
     return "" if pd.isna(val) or str(val).lower() == "nan" else str(val)
 
 # Reusable verse display block
-def display_verse_block(verse_no):
+def display_verse_block(verse_no, lagna):
     verses_df["VerseNo"] = verses_df["VerseNo"].astype(int)
-    verse_row = verses_df[verses_df["VerseNo"] == verse_no]
+    verses_df["Lagna"] = verses_df["Lagna"].str.strip().str.capitalize()
+
+    verse_row = verses_df[
+        (verses_df["VerseNo"] == verse_no) &
+        (verses_df["Lagna"] == lagna)
+    ]
 
     if not verse_row.empty:
         tamil = verse_row.iloc[0].get("TamilVerse", "")
@@ -57,7 +62,7 @@ def display_verse_block(verse_no):
             st.markdown("**📘 English Translation**")
             st.write(english)
     else:
-        st.info("📜 Verse not available for this chart.")
+        st.info(f"📜 Verse not available for {lagna} Lagna, VerseNo {verse_no}.")
 
 # Sidebar controls
 verse_option = st.sidebar.radio("📝 Verse Display", ["Side-by-Side"], index=0)
@@ -162,4 +167,5 @@ elif mode == "ALL Charts":
                 display_verse_block(verse_no)
 
                 st.markdown("**Result:**")
+
                 st.write(row.get("Result", "—"))
