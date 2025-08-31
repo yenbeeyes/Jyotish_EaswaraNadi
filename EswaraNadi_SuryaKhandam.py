@@ -37,11 +37,11 @@ def safe(val):
     return "" if pd.isna(val) or str(val).lower() == "nan" else str(val)
 
 # Mode: By Lagna
+# Mode: By Lagna
 if mode == "By Lagna":
     selected_lagna = st.selectbox("Select Lagna", ordered_lagnas)
     st.subheader(f"🔯 Lagna: {selected_lagna}")
     keyword = st.text_input("🔎 Search keyword in Result (optional)").strip()
-
     filtered_df = df[df["Lagna"].str.strip().str.capitalize() == selected_lagna]
     if keyword:
         filtered_df = filtered_df[filtered_df["Result"].str.contains(keyword, case=False, na=False)]
@@ -122,3 +122,4 @@ elif mode == "ALL Charts":
 
                 st.markdown("**Result:**")
                 st.write(row.get("Result", "—"))
+
