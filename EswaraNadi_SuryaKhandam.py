@@ -24,7 +24,7 @@ except Exception as e:
     st.stop()
 
 # Load Surya verse translations
-DEFAULT_VERSES_CSV = r"C:\EswaraNadi\Verses\Surya.csv"
+DEFAULT_VERSES_CSV = "Surya.csv"
 
 @st.cache_data
 def load_verses(csv_path):
@@ -167,6 +167,7 @@ else:
     st.write(f"Looking for VerseNo: {verse_no}")
 
     st.write(verse_row)
+
 
 
 
