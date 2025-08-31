@@ -99,7 +99,6 @@ if not verse_row.empty and verse_option in verse_row.columns:
     st.write(verse_row.iloc[0][verse_option])
 else:
     st.info("📜 Verse not available for this chart.")
-    
                 st.markdown("**Result:**")
                 st.write(row.get("Result", "—"))
 
@@ -161,4 +160,5 @@ else:
                 st.markdown("**Result:**")
                 st.write(row.get("Result", "—"))
                 st.write(f"Looking for VerseNo: {verse_no}")
+
                 st.write(verse_row)
