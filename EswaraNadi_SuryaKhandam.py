@@ -44,7 +44,14 @@ ordered_lagnas = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
                   "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
 
 # Sidebar mode switch
+# Sidebar mode switch
 mode = st.sidebar.radio("📋 View Mode", ["By Lagna", "ALL Charts"])
+
+# Mode: By Lagna
+if mode == "By Lagna":
+    selected_lagna = st.selectbox("Select Lagna", ordered_lagnas, key="lagna_select")
+    st.subheader(f"🔯 Lagna: {selected_lagna}")
+    keyword = st.text_input("🔎 Search keyword in Result (optional)", key="keyword_input").strip()
 st.sidebar.markdown("---")
 st.sidebar.markdown("📬 [Submit Feedback](https://docs.google.com/forms/d/e/1FAIpQLSeSUwk-YoFoLkORQnO5l7C92_Xrg1yAULhQPg7EgdpTLLcN6A/viewform)")
 
@@ -67,6 +74,7 @@ if mode == "By Lagna":
     else:
         for _, row in filtered_df.iterrows():
             with st.expander(f"📊 Chart No: {int(row['VerseNo'])}"):
+                #Planetary poistions
                 st.markdown(
                     f"**Sun:** {safe(row['Sun'])} | "
                     f"**Moon:** {safe(row['Moon'])} | "
@@ -82,7 +90,7 @@ if mode == "By Lagna":
                     f"**Rahu:** {safe(row['Rahu'])} | "
                     f"**Ketu:** {safe(row['Ketu'])}"
                 )
-
+               #Chart Image
                 if pd.notna(row["ImagePath"]):
                     try:
                         st.image(row["ImagePath"], use_container_width=True)
@@ -90,16 +98,16 @@ if mode == "By Lagna":
                         st.info("📁 Image not available.")
 
 # Display verse if available
-verse_no = int(row["VerseNo"])
-verses_df["VerseNo"] = verses_df["VerseNo"].astype(int)  # Ensure type match
-verse_row = verses_df[verses_df["VerseNo"] == verse_no]
+                verse_no = int(row["VerseNo"])
+                verses_df["VerseNo"] = verses_df["VerseNo"].astype(int)  # Ensure type match
+                verse_row = verses_df[verses_df["VerseNo"] == verse_no]
 
 if not verse_row.empty and verse_option in verse_row.columns:
     st.markdown(f"**{verse_option}:**")
     st.write(verse_row.iloc[0][verse_option])
 else:
     st.info("📜 Verse not available for this chart.")
-
+#Result
 st.markdown("**Result:**")
 st.write(row.get("Result", "—"))
 
@@ -167,6 +175,7 @@ else:
     st.write(f"Looking for VerseNo: {verse_no}")
 
     st.write(verse_row)
+
 
 
 
