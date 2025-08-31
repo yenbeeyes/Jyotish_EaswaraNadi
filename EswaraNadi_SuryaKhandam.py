@@ -9,7 +9,7 @@ import streamlit as st
 # ---------------------------
 DEFAULT_DATA_CSV = r"C:\EswaraNadi\Data\Surya_Khandam.csv"
 DEFAULT_IMAGE_DIR = r"C:\EswaraNadi\Charts\Surya"
-DEFAULT_VERSES_CSV = r""C:\EswaraNadi\Verses\Surya\Surya.csv"
+DEFAULT_VERSES_CSV = r"C:\EswaraNadi\Verses\Surya\Surya.csv"
 DEFAULT_IMAGE_PATTERN = "verse_{:02}"  # stem without extension; app will try .png/.jpg/.jpeg/.webp
 
 APP_TITLE = "Eswara Nadi – Surya Khandam"
@@ -322,3 +322,4 @@ with right:
 
 st.markdown("---")
 st.caption(APP_FOOTER)
+
