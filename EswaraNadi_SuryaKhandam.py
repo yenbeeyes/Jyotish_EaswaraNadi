@@ -66,7 +66,7 @@ if mode == "By Lagna":
         st.warning("No results found.")
     else:
         for _, row in filtered_df.iterrows():
-            with st.expander(f"📊 Chart No: {int(row['ChartNo'])}"):
+            with st.expander(f"📊 Chart No: {int(row['VerseNo'])}"):
                 st.markdown(
                     f"**Sun:** {safe(row['Sun'])} | "
                     f"**Moon:** {safe(row['Moon'])} | "
@@ -128,7 +128,7 @@ elif mode == "ALL Charts":
         st.warning("No charts found.")
     else:
         for _, row in current_df.iterrows():
-            with st.expander(f"📊 Chart No: {int(row['ChartNo'])}"):
+            with st.expander(f"📊 Chart No: {int(row['VerseNo'])}"):
                 st.markdown(
                     f"**Sun:** {safe(row['Sun'])} | "
                     f"**Moon:** {safe(row['Moon'])} | "
@@ -152,21 +152,22 @@ elif mode == "ALL Charts":
                         st.info("📁 Image not available.")
 
 # Display verse if available
-chart_no = int(row["ChartNo"])
-verses_df["ChartNo"] = verses_df["ChartNo"].astype(int)  # Ensure matching type
-verse_row = verses_df[verses_df["ChartNo"] == chart_no]
+chart_no = int(row["VerseNo"])
+verses_df["VerseNo"] = verses_df["VerseNo"].astype(int)  # Ensure matching type
+verse_row = verses_df[verses_df["VerseNo"] == chart_no]
 
 if not verse_row.empty and verse_option in verse_row.columns:
     st.markdown(f"**{verse_option}:**")
     st.write(verse_row.iloc[0][verse_option])
 else:
-    st.info(f"📜 Verse not available for ChartNo {chart_no}.")
+    st.info(f"📜 Verse not available for VerseNo {chart_no}.")
     
     st.markdown("**Result:**")
     st.write(row.get("Result", "—"))
     st.write(f"Looking for VerseNo: {verse_no}")
 
     st.write(verse_row)
+
 
 
 
