@@ -105,10 +105,13 @@ st.write(row.get("Result", "—"))
 
 # Mode: ALL Charts
 if mode == "By Lagna":
-    # your code for By Lagna
+    selected_lagna = st.selectbox("Select Lagna", ordered_lagnas)
+    st.subheader(f"🔯 Lagna: {selected_lagna}")
+    keyword = st.text_input("🔎 Search keyword in Result (optional)").strip()
 elif mode == "ALL Charts":
-    # your code for ALL Charts
-
+    if "chart_index" not in st.session_state:
+        st.session_state.chart_index = 0
+        
     col1, col2 = st.columns([1, 6])
     with col1:
         if st.button("⬅️ Previous") and st.session_state.chart_index > 0:
@@ -164,6 +167,7 @@ else:
                 st.write(f"Looking for VerseNo: {verse_no}")
 
                 st.write(verse_row)
+
 
 
 
