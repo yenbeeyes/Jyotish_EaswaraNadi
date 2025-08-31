@@ -104,9 +104,10 @@ st.markdown("**Result:**")
 st.write(row.get("Result", "—"))
 
 # Mode: ALL Charts
+if mode == "By Lagna":
+    # your code for By Lagna
 elif mode == "ALL Charts":
-    if "chart_index" not in st.session_state:
-        st.session_state.chart_index = 0
+    # your code for ALL Charts
 
     col1, col2 = st.columns([1, 6])
     with col1:
@@ -163,5 +164,6 @@ else:
                 st.write(f"Looking for VerseNo: {verse_no}")
 
                 st.write(verse_row)
+
 
 
