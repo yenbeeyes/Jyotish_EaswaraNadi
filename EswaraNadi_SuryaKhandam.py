@@ -63,6 +63,7 @@ def display_verse_block(verse_no, lagna):
             st.write(english)
     else:
         st.info(f"📜 Verse not available for {lagna} Lagna, VerseNo {verse_no}.")
+st.write(verses_df[(verses_df["Lagna"] == lagna) & (verses_df["VerseNo"] == verse_no)])
 
 # Sidebar controls
 verse_option = st.sidebar.radio("📝 Verse Display", ["Side-by-Side"], index=0)
@@ -170,4 +171,5 @@ elif mode == "ALL Charts":
 
                 st.markdown("**Result:**")
                 st.write(row.get("Result", "—"))
+
                 st.write(f"Looking for VerseNo: {verse_no}, Lagna: {lagna}")
