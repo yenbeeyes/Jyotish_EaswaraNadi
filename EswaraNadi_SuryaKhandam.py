@@ -136,7 +136,7 @@ if mode == "By Lagna":
                 display_verse_block(row["VerseID"], editable=edit_mode)
                 st.markdown("**Result:**")
                 st.write(safe(row["Result"]))
-
+                st.write("Current working directory:", os.getcwd())
 # Mode: ALL Charts
 elif mode == "ALL Charts":
     if "chart_index" not in st.session_state:
@@ -184,4 +184,5 @@ elif mode == "ALL Charts":
 
                 display_verse_block(row["VerseID"], editable=edit_mode)
                 st.markdown("**Result:**")
+
                 st.write(safe(row["Result"]))
