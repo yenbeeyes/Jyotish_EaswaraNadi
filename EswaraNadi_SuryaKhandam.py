@@ -133,10 +133,10 @@ if mode == "By Lagna":
                 else:
                     image_path = ""
                 
-                if os.path.exists(image_path):
-                    st.image(image_path, use_container_width=True)
-                else:
-                    st.info("📁 Image not available.")
+                #if os.path.exists(image_path):
+                   # st.image(image_path, use_container_width=True)
+               # else:
+                 #   st.info("📁 Image not available.")
                 st.caption(f"🖼️ ImagePath: `{image_path}`")
                 display_verse_block(row["VerseID"], editable=edit_mode)
                 st.markdown("**Result:**")
@@ -179,7 +179,11 @@ elif mode == "ALL Charts":
                     f"**Rahu:** {safe(row['Rahu'])} | "
                     f"**Ketu:** {safe(row['Ketu'])}"
                 )
-
+                if pd.notna(row["ImagePath"]):
+                    try:
+                        st.image(row["ImagePath"], use_container_width=True)
+                    except:
+                        st.info("📁 Image not available.")
                 image_path = safe(row["ImagePath"])
                 if image_path and os.path.exists(image_path):
                     st.image(image_path, use_container_width=True)
@@ -191,4 +195,5 @@ elif mode == "ALL Charts":
                 st.markdown("**Result:**")
 
                 st.write(safe(row["Result"]))
+
 
