@@ -137,7 +137,7 @@ if mode == "By Lagna":
                    # st.image(image_path, use_container_width=True)
                # else:
                  #   st.info("📁 Image not available.")
-                st.caption(f"🖼️ ImagePath: `{image_path}`")
+                #st.caption(f"🖼️ ImagePath: `{image_path}`")
                 display_verse_block(row["VerseID"], editable=edit_mode)
                 st.markdown("**Result:**")
                 st.write(safe(row["Result"]))
@@ -195,5 +195,6 @@ elif mode == "ALL Charts":
                 st.markdown("**Result:**")
 
                 st.write(safe(row["Result"]))
+
 
 
