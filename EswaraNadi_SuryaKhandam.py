@@ -119,11 +119,11 @@ if mode == "By Lagna":
                     f"**Ketu:** {safe(row['Ketu'])}"
                 )
                 
-                 if pd.notna(row["ImagePath"]):
-                    try:
-                        st.image(row["ImagePath"], use_container_width=True)
-                    except:
-                        st.info("📁 Image not available.")
+                if pd.notna(row["ImagePath"]):
+                   try:
+                      st.image(row["ImagePath"], use_container_width=True)
+                   except:
+                      st.info("📁 Image not available.")
                         
                 verse_id = str(row["VerseID"]).strip()
                 parts = verse_id.split("-")
@@ -195,4 +195,5 @@ elif mode == "ALL Charts":
 
                 display_verse_block(row["VerseID"], editable=edit_mode)
                 st.markdown("**Result:**")
+
                 st.write(safe(row["Result"]))
