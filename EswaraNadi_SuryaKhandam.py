@@ -84,7 +84,7 @@ if mode == "By Lagna":
         st.warning("No results found.")
     else:
         for _, row in filtered_df.iterrows():
-            with st.expander(f"📊 Chart No: {int(row['VerseNo'])}"):
+            with st.expander(f"📊 {row['Lagna']} Lagna — Chart ID: {row['VerseID']}"):
                 st.markdown(
                     f"**Sun:** {safe(row['Sun'])} | "
                     f"**Moon:** {safe(row['Moon'])} | "
@@ -163,4 +163,5 @@ elif mode == "ALL Charts":
 
                 st.markdown("**Result:**")
                 st.write(row.get("Result", "—"))
+
                 st.write(f"Looking for VerseNo: {verse_no}, Lagna: {lagna}")
