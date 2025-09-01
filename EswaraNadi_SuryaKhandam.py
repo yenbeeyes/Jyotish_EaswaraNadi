@@ -10,13 +10,13 @@ st.markdown(
     """
     Welcome to the digitized archive of the **Surya Khandam** section of the *Eswara Nadi*.  
     Explore ancient planetary configurations, astrological predictions, and original chart images —  
-    organized by **Lagna** for each native.  
+    organized by **Lagna** as given by Agasthiyar.  
     ---
     """
 )
 
 # Load main chart data
-csv_file = "EswaraNadi_AllLagnas_with_ImagePath.csv"
+csv_file = "EswaraNadi_AllLagnasCSV.csv"
 try:
     df = pd.read_csv(csv_file)
 except Exception as e:
@@ -24,7 +24,7 @@ except Exception as e:
     st.stop()
 
 # Load Surya verse translations
-DEFAULT_VERSES_CSV = "Surya.csv"
+DEFAULT_VERSES_CSV = "Surya_Verses.csv"
 
 @st.cache_data
 def load_verses(csv_path):
@@ -163,5 +163,4 @@ elif mode == "ALL Charts":
 
                 st.markdown("**Result:**")
                 st.write(row.get("Result", "—"))
-
                 st.write(f"Looking for VerseNo: {verse_no}, Lagna: {lagna}")
