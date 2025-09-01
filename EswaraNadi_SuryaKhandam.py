@@ -17,7 +17,7 @@ organized by **Lagna** as given by Agasthiyar.
 # File paths
 # File paths
 CHART_CSV = "EswaraNadi_AllLagnasCSV.csv"
-VERSE_CSV = "Surya.csv"
+VERSE_CSV = "Surya_Verses.csv"
 BASE_IMAGE_FOLDER = r"Jyotish_EaswaraNadi/images"
 
 # Load chart data
@@ -179,4 +179,5 @@ elif mode == "ALL Charts":
 
                 display_verse_block(row["VerseID"], editable=edit_mode)
                 st.markdown("**Result:**")
+
                 st.write(safe(row["Result"]))
