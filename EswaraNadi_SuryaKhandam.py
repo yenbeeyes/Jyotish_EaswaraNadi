@@ -154,11 +154,11 @@ elif mode == "ALL Charts":
 
                 if pd.notna(row["ImagePath"]):
                     image_path = str(row.get("ImagePath", "")).strip()
-                       if image_path:
-                          try:
-                              st.image(image_path, use_container_width=True)
-                          except:
-                              st.info("📁 Image not available.")
+                    if image_path:
+                       try:
+                           st.image(image_path, use_container_width=True)
+                       except:
+                           st.info("📁 Image not available.")
                    
 
                 verse_id = str(row["VerseID"]).strip()
@@ -166,4 +166,5 @@ elif mode == "ALL Charts":
 
                 st.markdown("**Result:**")
                 st.write(row.get("Result", "—"))
+
                
