@@ -124,7 +124,7 @@ if mode == "By Lagna":
                 if len(parts) == 2:
                     lagna = parts[0]
                     number = parts[1]
-                    filename = f"{lagna}_Charto{number}.jpg"
+                    filename = f"{lagna}_Chart{number}.jpg"
                     image_path = os.path.join(BASE_IMAGE_FOLDER, filename)
                 else:
                     image_path = ""
@@ -185,4 +185,5 @@ elif mode == "ALL Charts":
 
                 display_verse_block(row["VerseID"], editable=edit_mode)
                 st.markdown("**Result:**")
+
                 st.write(safe(row["Result"]))
