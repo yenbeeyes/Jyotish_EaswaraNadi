@@ -122,3 +122,4 @@ elif mode == "ALL Charts":
 
                 st.markdown("**Result:**")
                 st.write(row.get("Result", "—"))
+
