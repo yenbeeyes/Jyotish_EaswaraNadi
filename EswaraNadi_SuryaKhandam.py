@@ -18,7 +18,6 @@ organized by **Lagna** as given by Agasthiyar.
 # File paths
 CHART_CSV = "EswaraNadi_AllLagnasCSV.csv"
 VERSE_CSV = "Surya_Verses.csv"
-BASE_IMAGE_FOLDER = r"Jyotish_EaswaraNadi/images"
 
 # Load chart data
 @st.cache_data
@@ -125,8 +124,7 @@ if mode == "By Lagna":
                     lagna = parts[0]
                     number = parts[1]
                     filename = f"{lagna}_Chart{number}.jpg"
-                    image_path = os.path.join(BASE_IMAGE_FOLDER, filename)
-                else:
+                 else:
                     image_path = ""
                 
                 if os.path.exists(image_path):
@@ -187,3 +185,4 @@ elif mode == "ALL Charts":
                 st.markdown("**Result:**")
 
                 st.write(safe(row["Result"]))
+
