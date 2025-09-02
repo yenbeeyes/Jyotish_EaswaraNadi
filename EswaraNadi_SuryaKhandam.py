@@ -133,7 +133,7 @@ if mode == "By Lagna":
                         "https://raw.githubusercontent.com/yenbeeyes/Jyotish_EaswaraNadi/main/images/"
                     )
                     st.image(image_url, use_container_width=True)
-                    st.caption(f"🖼️ ImagePath: `{image_url}`")
+                    
                 else:
                     st.info("📁 Image not available.")
                 
@@ -191,7 +191,7 @@ elif mode == "ALL Charts":
                         "https://raw.githubusercontent.com/yenbeeyes/Jyotish_EaswaraNadi/main/images/"
                     )
                     st.image(image_url, use_container_width=True)
-                    st.caption(f"🖼️ ImagePath: `{image_url}`")
+                    
                 else:
                     st.info("📁 Image not available.")
                 
