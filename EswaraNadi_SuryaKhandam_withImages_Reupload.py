@@ -15,7 +15,7 @@ organized by **Lagna** as given by Agasthiyar.
 ---""")
 
 # File paths
-CHART_CSV = "SuryaKhandam/images/"
+CHART_CSV = "SuryaKhandam/EswaraNadi_AllLagnasCSV.csv"
 
 @st.cache_data
 def load_chart_data(path):
