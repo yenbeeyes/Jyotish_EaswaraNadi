@@ -15,8 +15,7 @@ organized by **Lagna** as given by Agasthiyar.
 ---""")
 
 # File paths
-CHART_CSV = "SuryaKhandam/EswaraNadi_AllLagnasCSV.csv"
-
+CHART_CSV = "SuryaKhandam/EswaraNadi_AllLagnasCSV_UPDATED.csv"
 @st.cache_data
 def load_chart_data(path):
     df = pd.read_csv(path, encoding='utf-8')
