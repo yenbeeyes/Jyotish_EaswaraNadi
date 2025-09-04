@@ -30,7 +30,7 @@ def load_chart_data(path):
 # Dynamically load verse data based on Lagna
 @st.cache_data
 def load_verse_data_by_lagna(lagna):
-    filename = f"Surya_Khandam/Surya_Verses_{lagna}.csv"
+    filename = f"SuryaKhandam/Surya_Verses_{lagna}.csv"
     try:
         df = pd.read_csv(filename, encoding='utf-8')
         df["VerseID"] = df["VerseID"].astype(str).str.strip()
@@ -82,7 +82,7 @@ def display_verse_block(verse_id, verses_df, editable=False):
             if st.button(f"💾 Save Verse {verse_id}"):
                 verses_df.loc[verses_df["VerseID"] == verse_id, "TamilVerse"] = new_tamil
                 verses_df.loc[verses_df["VerseID"] == verse_id, "EnglishTranslation"] = new_english
-                verses_df.to_csv(f"Surya_Khandam/Surya_Verses_{selected_lagna}.csv", index=False, encoding='utf-8')
+                verses_df.to_csv(f"SuryaKhandam/Surya_Verses_{selected_lagna}.csv", index=False, encoding='utf-8')
                 st.success(f"✅ Verse `{verse_id}` updated successfully.")
     else:
         st.info(f"📜 Verse not available for `{verse_id}`.")
@@ -113,8 +113,8 @@ if mode == "By Lagna":
                 image_path = safe(row["ImagePath"])
                 if image_path:
                     image_url = image_path.replace(
-                        "Surya_Khandam/images/",
-                        "https://raw.githubusercontent.com/yenbeeyes/Jyotish_EaswaraNadi/main/Surya_Khandam/images/"
+                        "SuryaKhandam/images/",
+                        "https://raw.githubusercontent.com/yenbeeyes/Jyotish_EaswaraNadi/main/SuryaKhandam/images/"
                     )
                     st.image(image_url, use_container_width=True)
                     st.caption(f"🖼️ ImagePath: `{image_url}`")
@@ -161,8 +161,8 @@ elif mode == "ALL Charts":
                 image_path = safe(row["ImagePath"])
                 if image_path:
                     image_url = image_path.replace(
-                        "Surya_Khandam/images/",
-                        "https://raw.githubusercontent.com/yenbeeyes/Jyotish_EaswaraNadi/main/Surya_Khandam/images/"
+                        "SuryaKhandam/images/",
+                        "https://raw.githubusercontent.com/yenbeeyes/Jyotish_EaswaraNadi/main/SuryaKhandam/images/"
                     )
                     st.image(image_url, use_container_width=True)
                     st.caption(f"🖼️ ImagePath: `{image_url}`")
