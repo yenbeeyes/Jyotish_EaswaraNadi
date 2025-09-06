@@ -82,7 +82,7 @@ def display_verse_block(verse_id, verses_df, editable=False):
             if st.button(f"💾 Save Verse {verse_id}"):
                 verses_df.loc[verses_df["VerseID"] == verse_id, "TamilVerse"] = new_tamil
                 verses_df.loc[verses_df["VerseID"] == verse_id, "EnglishTranslation"] = new_english
-                verses_df.to_csv(f"SuryaKhandam/Surya_Verses_{selected_lagna}.csv", index=False, encoding='utf-8')
+                verses_df.to_csv(f"Chadra_Khandam/Chandra_Verses_{selected_lagna}.csv", index=False, encoding='utf-8')
                 st.success(f"✅ Verse `{verse_id}` updated successfully.")
     else:
         st.info(f"📜 Verse not available for `{verse_id}`.")
@@ -113,7 +113,7 @@ if mode == "By Lagna":
                 image_path = safe(row["ImagePath"])
                 if image_path:
                     image_url = image_path.replace(
-                        "SuryaKhandam/images/",
+                        "Chandra_Khandam/images/",
                         "https://raw.githubusercontent.com/yenbeeyes/Jyotish_EaswaraNadi/main/ChandraKhandam/images/"
                     )
                     st.image(image_url, use_container_width=True)
@@ -161,7 +161,7 @@ elif mode == "ALL Charts":
                 image_path = safe(row["ImagePath"])
                 if image_path:
                     image_url = image_path.replace(
-                        "SuryaKhandam/images/",
+                        "Chadra_Khandam/images/",
                         "https://raw.githubusercontent.com/yenbeeyes/Jyotish_EaswaraNadi/main/SuryaKhandam/images/"
                     )
                     st.image(image_url, use_container_width=True)
