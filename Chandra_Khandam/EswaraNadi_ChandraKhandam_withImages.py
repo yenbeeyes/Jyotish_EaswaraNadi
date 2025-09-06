@@ -123,9 +123,7 @@ if mode == "By Lagna":
                       st.warning(f"No image found for {chart_id}. Check file path or generation logic.")
                 except Exception as e:
                    st.error(f"Failed to load image for {chart_id}: {e}")
-
-                    st.image(image_url, use_container_width=True)
-                    st.caption(f"🖼️ ImagePath: `{image_url}`")
+                   st.caption(f"🖼️ ImagePath: `{image_url}`")
                 else:
                     st.info("📁 Image not available.")
                 display_verse_block(row["VerseID"], verses_df, editable=edit_mode)
