@@ -16,7 +16,7 @@ organized by **Lagna** as given by Agasthiyar.
 """)
 
 # File paths
-CHART_CSV = "ChandraKhandam/Chandra_Khandam.csv"  # change if needed
+CHART_CSV = "Chandra_Khandam/Chandra_Khandam.csv"  # change if needed
 
 # Load chart data
 @st.cache_data
