@@ -116,6 +116,14 @@ if mode == "By Lagna":
                         "SuryaKhandam/images/",
                         "https://raw.githubusercontent.com/yenbeeyes/Jyotish_EaswaraNadi/main/SuryaKhandam/images/"
                     )
+                   try:
+                      if image_url and os.path.exists(image_url):
+                          st.image(image_url, use_container_width=True)
+                      else:
+                          st.warning(f"No image found for {chart_id}. Check file path or generation logic.")
+                   except Exception as e:
+                       st.error(f"Failed to load image for {chart_id}: {e}")
+
                     st.image(image_url, use_container_width=True)
                     st.caption(f"🖼️ ImagePath: `{image_url}`")
                 else:
