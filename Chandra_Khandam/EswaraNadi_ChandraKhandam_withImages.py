@@ -30,7 +30,7 @@ def load_chart_data(path):
 # Dynamically load verse data based on Lagna
 @st.cache_data
 def load_verse_data_by_lagna(lagna):
-    filename = f"ChandraKhandam/Chandra_Verses_{lagna}.csv"
+    filename = f"Chandra_Khandam/Chandra_Verses_{lagna}.csv"
     try:
         df = pd.read_csv(filename, encoding='utf-8')
         df["VerseID"] = df["VerseID"].astype(str).str.strip()
