@@ -146,6 +146,11 @@ if mode == "By Lagna":
                 display_verse_block(row["VerseID"], verses_df, editable=edit_mode)
                 st.markdown("**Result:**")
                 st.write(safe(row["Result"]))
+                if "interpretation_lookup" in globals():
+                    interp = interpretation_lookup.get(row["VerseID"], "")
+                    if interp:
+                        st.markdown("**🔍 Concise Interpretation**")
+                        st.success(interp)
 
 # Mode: ALL Charts
 elif mode == "ALL Charts":
@@ -194,3 +199,9 @@ elif mode == "ALL Charts":
                 display_verse_block(row["VerseID"], verses_df, editable=edit_mode)
                 st.markdown("**Result:**")
                 st.write(safe(row["Result"]))
+
+                if "interpretation_lookup" in globals():
+                    interp = interpretation_lookup.get(row["VerseID"], "")
+                    if interp:
+                        st.markdown("**🔍 Concise Interpretation**")
+                        st.success(interp)
