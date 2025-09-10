@@ -46,10 +46,11 @@ def load_interpretations():
     try:
         interp_df = pd.read_csv("SuryaKhandam/SuryaKhandam_Interpretations.csv", encoding='utf-8')
         interp_df["VerseID"] = interp_df["VerseID"].astype(str).str.strip()
-        interp_df["Lagna"] = interp_df["Lagna"].astype(str).str.strip().str.capitalize()
-        return df
+        if "Lagna" in interp_df.columns:
+            interp_df["Lagna"] = interp_df["Lagna"].astype(str).str.strip().str.capitalize()
+        return interp_df
     except Exception as e:
-        st.warning(f"⚠️ Could not load interpretation xxx file: {e}")
+        st.warning(f"⚠️ Could not load interpretation file: {e}")
         return pd.DataFrame()
 
 interpretation_lookup = load_interpretations()
