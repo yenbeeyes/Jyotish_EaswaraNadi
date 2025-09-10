@@ -64,8 +64,7 @@ def load_interpretations():
         return pd.DataFrame()
 
 interpretation_lookup = load_interpretations()
-interpretation_dict = dict(zip(interpretation_lookup["VerseID"], interpretation_lookup["Concise Interpretations"]))
-
+interpretation_dict = dict(zip(interpretation_lookup["verseid"], interpretation_lookup["concise_interpretations"]))
 # Utility
 def safe(val):
     return "" if pd.isna(val) or str(val).lower() == "nan" else str(val)
