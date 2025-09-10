@@ -52,7 +52,8 @@ def load_interpretations():
     filename= f"SuryaKhandam/SuryaKhandam_Interpretations.csv"
     try:
         df = pd.read_csv(filename, encoding='utf-8')
-        #st.write("Columns found:", df.columns.tolist())
+        df.columns = df.columns.str.strip().str.replace(" ", "_").str.lower()
+        st.write("Columns found:", df.columns.tolist())
         df.rename(columns={"Verse ID": "VerseID"}, inplace=True)
         df["VerseID"] = df["VerseID"].astype(str).str.strip()
         if "Lagna" in df.columns:
