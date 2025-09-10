@@ -50,7 +50,7 @@ def load_interpretations():
         interp_df["Lagna"] = interp_df["Lagna"].astype(str).str.strip().str.capitalize()
         return interp_dict
     except Exception as e:
-        st.warning(f"⚠️ Could not load interpretation file: {e}")
+        st.warning(f"⚠️ Could not load interpretation xxx file: {e}")
         return pd.DataFrame()
 
 interpretation_lookup = load_interpretations()
