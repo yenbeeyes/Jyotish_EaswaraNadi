@@ -47,7 +47,7 @@ def load_interpretations():
         interp_df = pd.read_csv("SuryaKhandam/SuryaKhandam_Interpretations.csv", encoding='utf-8')
         interp_df["VerseID"] = interp_df["VerseID"].astype(str).str.strip()
         interp_df["Lagna"] = interp_df["Lagna"].astype(str).str.strip().str.capitalize()
-        return interp_dict
+        return df
     except Exception as e:
         st.warning(f"⚠️ Could not load interpretation xxx file: {e}")
         return pd.DataFrame()
