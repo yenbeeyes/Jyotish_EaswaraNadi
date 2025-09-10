@@ -45,12 +45,13 @@ def load_verse_data_by_lagna(lagna):
 def load_interpretations():
     try:
         interp_df = pd.read_csv("SuryaKhandam/SuryaKhandam_Interpretations.csv", encoding='utf-8')
+        interp_df.rename(columns={"Verse ID": "VerseID"}, inplace=True)  # handle space in header
         interp_df["VerseID"] = interp_df["VerseID"].astype(str).str.strip()
-        interp_dict = dict(zip(interp_df["VerseID"], interp_df["Concise Interpretation"]))
+        interp_df["Lagna"] = interp_df["Lagna"].astype(str).str.strip().str.capitalize()
         return interp_dict
     except Exception as e:
         st.warning(f"⚠️ Could not load interpretation file: {e}")
-        return {}
+        return pd.DataFrame()
 
 interpretation_lookup = load_interpretations()
 
