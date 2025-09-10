@@ -143,7 +143,6 @@ if mode == "By Lagna":
                         "https://raw.githubusercontent.com/yenbeeyes/Jyotish_EaswaraNadi/main/SuryaKhandam/images/"
                     )
                     st.image(image_url, use_container_width=True)
-                    st.caption(f"🖼️ ImagePath: `{image_url}`")
                 else:
                     st.info("📁 Image not available.")
                 display_verse_block(row["VerseID"], verses_df, editable=edit_mode)
