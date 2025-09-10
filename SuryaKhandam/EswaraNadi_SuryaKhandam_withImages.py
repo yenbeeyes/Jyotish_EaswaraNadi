@@ -63,6 +63,7 @@ def load_interpretations():
         return pd.DataFrame()
 
 interpretation_lookup = load_interpretations()
+interpretation_dict = dict(zip(interpretation_lookup["VerseID"], interpretation_lookup["Concise Interpretations"]))
 
 # Utility
 def safe(val):
