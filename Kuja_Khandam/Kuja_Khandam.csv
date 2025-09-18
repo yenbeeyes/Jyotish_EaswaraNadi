@@ -1,4 +1,4 @@
-﻿fre,VerseID,Sun,Moon,Mars,Mercury,Jupiter,Venus,Saturn,Rahu,Ketu,Result,ImagePath
+Lagna,VerseID,Sun,Moon,Mars,Mercury,Jupiter,Venus,Saturn,Rahu,Ketu,Result,ImagePath
 Aries,Aries-01,Gemini,,Aries,Gemini,Libra,Gemini,Libra,,Aries,"The native’s siblings—those born alongside or close in age—are said to suffer decline or destruction (Kshina/ meaning weakness, ruin, or loss in classical Sanskrit/Tamil usage).",Kuja_Khandam/images/Aries-Chart01.jpg
 Aries,Aries-02,,,Aries,,Libra,,Virgo,,Aries,The native will have an elder sister and a younger brother.,Kuja_Khandam/images/Aries-Chart02.jpg
 Aries,Aries-03,,,Aries,,,Aries,Aquarius,,,"The native will have four sons and three daughters. The first daughter will become a widow, through whom wealth and lands will be acquired.",Kuja_Khandam/images/Aries-Chart03.jpg
@@ -711,3 +711,4 @@ Pisces,Pisces-57,,,,,,,,,,,Kuja_Khandam/images/Pisces-Chart57.jpg
 Pisces,Pisces-58,,,,,,,,,,,Kuja_Khandam/images/Pisces-Chart58.jpg
 Pisces,Pisces-59,,,,,,,,,,,Kuja_Khandam/images/Pisces-Chart59.jpg
 Pisces,Pisces-60,,,,,,,,,,,Kuja_Khandam/images/Pisces-Chart60.jpg
+
